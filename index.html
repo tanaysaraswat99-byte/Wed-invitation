@@ -3,227 +3,637 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Akash & Himangi Wedding</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash & Himangi | Wedding Invitation</title>
+
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#24172c;color:#fff8ef;
-font-family:Georgia,serif}
-.hero{
-min-height:100vh;display:flex;align-items:center;
-justify-content:center;text-align:center;padding:35px 15px;
-position:relative;overflow:hidden;
-background:radial-gradient(ellipse at center,#a58bad,#70547c 48%,#302038 100%);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.hero:before{
-content:"";position:absolute;inset:12px;
-border:1px solid #e8d09b;pointer-events:none;
+
+html {
+  scroll-behavior: smooth;
 }
-.flowers{
-position:absolute;top:0;left:0;right:0;
-font-size:35px;letter-spacing:10px;
-color:#e5b6d2;text-shadow:0 0 12px #f7c9dd;
+
+body {
+  font-family: Georgia, serif;
+  background: #21102d;
+  color: #fff5e9;
+  overflow-x: hidden;
 }
-.content{position:relative;z-index:2;width:100%;max-width:550px}
-.small{letter-spacing:3px;font-size:14px}
-.names{
-font-family:cursive;font-style:italic;
-font-size:clamp(55px,13vw,90px);
-line-height:1.05;margin:35px 0;
-color:#fff2f3;text-shadow:0 3px 15px #392344;
+
+:root {
+  --gold: #f7d991;
+  --pink: #e9b0c8;
+  --purple: #35163e;
 }
-.date{font-size:28px;margin:25px 0 10px}
-.place{letter-spacing:3px;font-size:14px}
-.countdown{
-display:flex;gap:8px;justify-content:center;
-margin:35px auto;max-width:450px;
+
+/* MAIN INVITATION */
+
+.invitation {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 65px 15px 45px;
+
+  background:
+    radial-gradient(ellipse at 50% 30%, #96719f 0%, transparent 60%),
+    linear-gradient(180deg, #49315e, #9b6d91 55%, #321333);
 }
-.time{
-border:1px solid #ead5a9;border-radius:13px;
-padding:12px 5px;flex:1;background:#38254188;
+
+.invitation::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 20px #f8d99a88;
+  pointer-events: none;
 }
-.time b{display:block;font-size:27px}
-.time small{font-size:12px}
-button{
-background:#321b38;color:#fff2d8;
-border:2px solid #e8d09b;border-radius:40px;
-padding:16px 30px;font-size:17px;
-cursor:pointer;letter-spacing:2px;
-box-shadow:0 0 15px #e8d09b55;
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  margin: auto;
 }
-button:hover{background:#65466b}
-#invitation{display:none;background:#fff8ef;color:#49394a}
-#invitation.show{display:block;animation:reveal 1s ease}
-@keyframes reveal{
-from{opacity:0;transform:translateY(25px)}
-to{opacity:1;transform:translateY(0)}
+
+.flowers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 35px;
+  letter-spacing: 7px;
+  line-height: 1.4;
+  opacity: .9;
+  text-shadow: 0 0 12px #ffdb9c;
+  pointer-events: none;
 }
-.section{
-padding:65px 20px;text-align:center;
+
+.top-space {
+  margin-top: 85px;
 }
-.section:nth-child(even){background:#f1e5e4}
-.dark{background:#49334f!important;color:#fff8ef}
-h2{font-size:30px;font-weight:normal}
-.script{font-family:cursive;font-style:italic;font-size:52px}
-p{font-size:19px;line-height:1.6}
-.line{color:#bd9b76;font-size:25px;margin:20px}
-.card{
-max-width:500px;margin:25px auto;padding:25px;
-border:1px solid #d3b995;border-radius:16px;
+
+.small-title {
+  font-size: 19px;
+  color: #ffe5e7;
+  letter-spacing: 2px;
 }
-a.link{
-display:inline-block;padding:12px 22px;
-border:1px solid #bd9b76;border-radius:30px;
-color:inherit;text-decoration:none;margin:8px;
+
+.heart {
+  color: #ffe4df;
+  font-size: 30px;
+  margin: 20px;
 }
-.event{padding:15px;border-bottom:1px solid #cbb6a7}
-.footer{padding:35px;text-align:center;background:#24172c}
+
+.names {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(55px, 12vw, 88px);
+  line-height: 1.2;
+  font-style: italic;
+  color: #fff0ed;
+  text-shadow: 0 3px 12px #351334;
+  margin: 20px 0;
+}
+
+.date {
+  font-size: 29px;
+  color: #ffe5cf;
+  margin-top: 30px;
+}
+
+.place {
+  color: #ffe6dd;
+  letter-spacing: 3px;
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 45px auto 35px;
+}
+
+.time-box {
+  width: 22%;
+  min-width: 70px;
+  padding: 13px 3px;
+  border: 2px solid #f4d4b5;
+  border-radius: 17px;
+  background: #472b4e88;
+  box-shadow: 0 0 12px #f5c8d155;
+}
+
+.time-box span {
+  display: block;
+  font-size: clamp(23px, 6vw, 35px);
+}
+
+.time-box small {
+  font-size: 13px;
+}
+
+/* OPEN INVITATION BUTTON */
+
+.open-btn {
+  position: relative;
+  z-index: 20;
+  background: linear-gradient(135deg, #311039, #54214e);
+  border: 3px solid var(--gold);
+  border-radius: 35px;
+  color: #fff0cf;
+  padding: 19px 30px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 21px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #f6d68d88;
+  transition: .3s;
+}
+
+.open-btn:active {
+  transform: scale(.95);
+}
+
+.rings {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+/* CURTAINS */
+
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  overflow: hidden;
+}
+
+.curtain-left,
+.curtain-right {
+  width: 50%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #280b35 0px,
+      #57264e 18px,
+      #35143e 38px,
+      #713b64 55px
+    );
+  box-shadow: inset 0 0 45px #16051f;
+  transition: transform 2s cubic-bezier(.75,0,.2,1);
+}
+
+.curtain-left {
+  border-right: 3px solid #e6bd77;
+}
+
+.curtain-right {
+  border-left: 3px solid #e6bd77;
+}
+
+.curtain.open .curtain-left {
+  transform: translateX(-105%);
+}
+
+.curtain.open .curtain-right {
+  transform: translateX(105%);
+}
+
+.curtain-decoration {
+  position: absolute;
+  top: 12%;
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+  color: #f8d78f;
+  text-shadow: 0 0 15px gold;
+}
+
+/* WEDDING EVENTS */
+
+.events {
+  padding: 65px 18px;
+  background: linear-gradient(180deg,#35163e,#6c3a65,#34132e);
+}
+
+.section-title {
+  color: var(--gold);
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: #f3c7d8;
+  margin-bottom: 35px;
+  letter-spacing: 2px;
+}
+
+.day-title {
+  color: var(--gold);
+  font-size: 23px;
+  margin: 35px 0 18px;
+}
+
+.event-card {
+  max-width: 480px;
+  margin: 13px auto;
+  padding: 19px 15px;
+  background: linear-gradient(135deg,#57305d,#34183c);
+  border: 1px solid #e8c47c;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px #15091c88;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.event-icon {
+  font-size: 32px;
+}
+
+.event-name {
+  color: #ffe3b2;
+  font-size: 21px;
+  margin-bottom: 6px;
+}
+
+.event-time {
+  color: #f5d7e5;
+  font-size: 15px;
+}
+
+/* VENUE */
+
+.venue {
+  padding: 55px 20px;
+  text-align: center;
+  background: linear-gradient(180deg,#321333,#1e0d27);
+}
+
+.venue h2 {
+  color: var(--gold);
+  font-size: 29px;
+  margin-bottom: 20px;
+}
+
+.venue-name {
+  font-size: 25px;
+  color: #ffe4d5;
+  margin-bottom: 12px;
+}
+
+.venue p {
+  line-height: 1.8;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 12px 22px;
+  border: 1px solid var(--gold);
+  border-radius: 25px;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* CONTACTS */
+
+.contacts {
+  padding: 50px 15px;
+  background: #24102d;
+  text-align: center;
+}
+
+.contacts h2 {
+  color: var(--gold);
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.contact-link {
+  display: block;
+  max-width: 340px;
+  margin: 13px auto;
+  padding: 15px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  color: #ffe9d1;
+  text-decoration: none;
+  background: #432346;
+  font-size: 18px;
+}
+
+.contact-link:hover {
+  background: #70436c;
+}
+
+.footer {
+  padding: 30px 10px;
+  color: #f2d2a2;
+  text-align: center;
+  font-style: italic;
+}
+
+/* MOBILE */
+
+@media(max-width:400px) {
+  .small-title {
+    font-size: 16px;
+  }
+
+  .open-btn {
+    font-size: 17px;
+    padding: 16px 22px;
+  }
+
+  .time-box {
+    min-width: 65px;
+  }
+}
+
 </style>
 </head>
+
 <body>
 
-<section class="hero" id="home">
-<div class="flowers">✿ ❀ ✿ ❀ ✿</div>
-<div class="content">
-<div class="small">TOGETHER WITH OUR FAMILIES</div>
-<div class="line">──── ♡ ────</div>
-<div class="small">JOIN US TO CELEBRATE LOVE</div>
+<!-- CURTAIN OPENING SCREEN -->
 
-<h1 class="names">Akash &<br>Himangi</h1>
+<div class="curtain" id="curtain">
+  <div class="curtain-left"></div>
+  <div class="curtain-right"></div>
+  <div class="curtain-decoration">✿ ✨ 💜 ✨ ✿</div>
+</div>
+
+<!-- MAIN WEDDING COVER -->
+
+<section class="invitation">
+
+<div class="flowers">
+  🌸 ✨ 💜 🌿 🌸 ✨ 🌿 💜 🌸
+</div>
+
+<div class="content">
+
+<div class="top-space"></div>
+
+<p class="small-title">JOIN US TO CELEBRATE LOVE</p>
+
+<div class="heart">━━━━ ♥ ━━━━</div>
+
+<h1 class="names">
+  Akash &<br> Himangi
+</h1>
 
 <div class="date">11 February 2027</div>
+
 <div class="place">BHILWARA · RAJASTHAN</div>
 
+<!-- COUNTDOWN -->
+
 <div class="countdown">
-<div class="time"><b id="days">0</b><small>Days</small></div>
-<div class="time"><b id="hours">0</b><small>Hours</small></div>
-<div class="time"><b id="minutes">0</b><small>Minutes</small></div>
-<div class="time"><b id="seconds">0</b><small>Seconds</small></div>
+
+  <div class="time-box">
+    <span id="days">000</span>
+    <small>Days</small>
+  </div>
+
+  <div class="time-box">
+    <span id="hours">00</span>
+    <small>Hours</small>
+  </div>
+
+  <div class="time-box">
+    <span id="minutes">00</span>
+    <small>Minutes</small>
+  </div>
+
+  <div class="time-box">
+    <span id="seconds">00</span>
+    <small>Seconds</small>
+  </div>
+
 </div>
 
-<button onclick="openInvite()">♡ OPEN INVITATION ♡</button>
-</div>
-</section>
+<button class="open-btn" id="openButton" onclick="openInvitation()">
+  <span class="rings">💍</span>
+  OPEN INVITATION
+</button>
 
-<main id="invitation">
-
-<section class="section">
-<div class="line">✧ ❀ ✧</div>
-<div class="script">Akash & Himangi</div>
-<h2>Two hearts, one beautiful beginning</h2>
-<p>
-With the blessings of our families,
-we invite you to join us as we begin
-our beautiful journey together.
+<p style="margin-top:20px;color:#ffe0dd;font-size:13px">
+  A beautiful journey of two hearts begins...
 </p>
-<div class="line">♡</div>
-<h2>11 February 2027</h2>
-<p>Bhilwara, Rajasthan</p>
-</section>
 
-<section class="section dark">
-<div class="script">The Wedding</div>
-<h2>Save the Date</h2>
-<div class="card">
-<p>Thursday</p>
-<h2>11 February 2027</h2>
-<p>Venue: To be announced</p>
-<a class="link"
-href="https://www.google.com/maps/search/?api=1&query=Bhilwara+Rajasthan"
-target="_blank">VIEW LOCATION ↗</a>
 </div>
 </section>
 
-<section class="section">
-<h2>Wedding Celebrations</h2>
-<div class="card">
-<div class="event">
-<h2>Welcome</h2>
-<p>Time to be announced</p>
+<!-- EVENT SCHEDULE -->
+
+<section class="events" id="details">
+
+<div class="content">
+
+<h2 class="section-title">Wedding Celebrations</h2>
+
+<p class="section-subtitle">TWO DAYS OF LOVE & JOY</p>
+
+<h3 class="day-title">✦ 10 FEBRUARY 2027 ✦</h3>
+
+<div class="event-card">
+  <div class="event-icon">🌺</div>
+  <div>
+    <div class="event-name">Basan</div>
+    <div class="event-time">9:00 AM – 10:00 AM</div>
+  </div>
 </div>
-<div class="event">
-<h2>Wedding Ceremony</h2>
-<p>11 February 2027</p>
+
+<div class="event-card">
+  <div class="event-icon">🌼</div>
+  <div>
+    <div class="event-name">Mayara</div>
+    <div class="event-time">12:00 PM – 1:00 PM</div>
+  </div>
 </div>
-<div class="event">
-<h2>Dinner & Celebration</h2>
-<p>Following the ceremony</p>
+
+<div class="event-card">
+  <div class="event-icon">💛</div>
+  <div>
+    <div class="event-name">Haldi Ceremony</div>
+    <div class="event-time">2:00 PM – 5:00 PM</div>
+  </div>
 </div>
+
+<div class="event-card">
+  <div class="event-icon">🎶</div>
+  <div>
+    <div class="event-name">Sangeet Night</div>
+    <div class="event-time">7:00 PM – 10:00 PM</div>
+  </div>
+</div>
+
+<h3 class="day-title">✦ 11 FEBRUARY 2027 ✦</h3>
+
+<div class="event-card">
+  <div class="event-icon">🔥</div>
+  <div>
+    <div class="event-name">Fere (Wedding Rituals)</div>
+    <div class="event-time">11:00 AM onwards</div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="event-icon">🥂</div>
+  <div>
+    <div class="event-name">Grand Reception</div>
+    <div class="event-time">7:00 PM onwards</div>
+  </div>
+</div>
+
 </div>
 </section>
 
-<section class="section dark">
-<div class="script">Will you join us?</div>
-<p>Your presence will make our day special.</p>
+<!-- VENUE -->
 
-<a class="link" id="accept" href="#">JOYFULLY ACCEPT ♡</a>
-<a class="link" id="decline" href="#">REGRETFULLY DECLINE</a>
+<section class="venue">
+
+<h2>📍 Wedding Venue</h2>
+
+<div class="venue-name">Aashika Resort</div>
+
+<p>
+Bhilwara, Rajasthan<br>
+We look forward to celebrating with you!
+</p>
+
+<a class="map-link"
+href="https://www.google.com/maps/search/?api=1&query=Aashika+Resort+Bhilwara+Rajasthan"
+target="_blank">
+  VIEW LOCATION 📍
+</a>
+
 </section>
 
-<section class="section">
-<h2>Dress Code</h2>
-<p>Come dressed in your festive best.</p>
-<div class="line">✧ ♡ ✧</div>
-<div class="script">Thank You</div>
-<p>We can't wait to celebrate with you!</p>
-<a class="link" href="#home">BACK TO TOP ↑</a>
-</section>
+<!-- CONTACT DETAILS -->
 
-</main>
+<section class="contacts">
+
+<h2>For Any Queries</h2>
+
+<p style="color:#edc8db;margin-bottom:20px">
+  Feel free to contact us
+</p>
+
+<a class="contact-link" href="tel:+919783448712">
+  ☎ +91 97834 48712
+</a>
+
+<a class="contact-link" href="https://wa.me/919783448712" target="_blank">
+  WhatsApp First Contact
+</a>
+
+<a class="contact-link" href="tel:+916378897152">
+  ☎ +91 63788 97152
+</a>
+
+<a class="contact-link" href="https://wa.me/916378897152" target="_blank">
+  WhatsApp Second Contact
+</a>
+
+</section>
 
 <footer class="footer">
-<div class="script">Akash & Himangi</div>
-<p>Made with love ♡</p>
+  <div style="font-size:30px">💜 ✨ 💍 ✨ 💜</div>
+  <p>Two Souls, One Beautiful Journey</p>
+  <p style="margin-top:10px">Akash & Himangi</p>
+  <p style="margin-top:15px">Your presence is our greatest gift.</p>
 </footer>
 
 <script>
-// Wedding countdown
-const wedding = new Date(
-"2027-02-11T18:00:00+05:30"
-).getTime();
 
-function countdown(){
-const distance = Math.max(0,wedding-Date.now());
+// OPEN THE CURTAINS
 
-document.getElementById("days").textContent =
-Math.floor(distance/86400000);
+function openInvitation() {
 
-document.getElementById("hours").textContent =
-Math.floor(distance%86400000/3600000);
+  const curtain = document.getElementById("curtain");
+  const button = document.getElementById("openButton");
 
-document.getElementById("minutes").textContent =
-Math.floor(distance%3600000/60000);
+  curtain.classList.add("open");
 
-document.getElementById("seconds").textContent =
-Math.floor(distance%60000/1000);
-}
-countdown();
-setInterval(countdown,1000);
+  button.style.opacity = "0";
+  button.style.pointerEvents = "none";
 
-// Open invitation
-function openInvite(){
-const invitation=document.getElementById("invitation");
-invitation.classList.add("show");
-invitation.scrollIntoView({behavior:"smooth"});
+  setTimeout(function() {
+    curtain.style.display = "none";
+
+    document.getElementById("details").scrollIntoView({
+      behavior: "smooth"
+    });
+
+  }, 2100);
+
 }
 
-// WHATSAPP RSVP
-// Replace with your number including country code
-// Example: 919876543210
-const phone="916378897152";
+// LIVE COUNTDOWN
 
-document.getElementById("accept").href=
-"https://wa.me/"+phone+
-"?text="+encodeURIComponent(
-"We would love to attend Akash and Himangi's wedding!"
-);
+function updateCountdown() {
 
-document.getElementById("decline").href=
-"https://wa.me/"+phone+
-"?text="+encodeURIComponent(
-"Thank you for inviting us. Sadly, we cannot attend."
-);
+  const weddingDate = new Date(
+    "2027-02-11T00:00:00+05:30"
+  ).getTime();
+
+  const now = Date.now();
+
+  let difference = weddingDate - now;
+
+  if (difference < 0) {
+    difference = 0;
+  }
+
+  const days = Math.floor(
+    difference / (1000 * 60 * 60 * 24)
+  );
+
+  const hours = Math.floor(
+    (difference / (1000 * 60 * 60)) % 24
+  );
+
+  const minutes = Math.floor(
+    (difference / (1000 * 60)) % 60
+  );
+
+  const seconds = Math.floor(
+    (difference / 1000) % 60
+  );
+
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText =
+    String(hours).padStart(2,"0");
+
+  document.getElementById("minutes").innerText =
+    String(minutes).padStart(2,"0");
+
+  document.getElementById("seconds").innerText =
+    String(seconds).padStart(2,"0");
+
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
 </script>
 
 </body>
